@@ -12,7 +12,19 @@
     <input type="text" id="purpose" placeholder="사용목적..">
     <button onclick="save();">저장하기</button>
     <button onclick="show();">보여주기</button>
-    <p id="result"></p>
+    <table border="1" cellspacing="0">
+        <caption>카드 사용 목록입니다.</caption>
+        <tr>
+            <th>사용한곳</th>
+            <th>금액</th>
+            <th>사용목적</th>
+        </tr>
+        <tr>
+            <td id="T1_1"></td>
+            <td id="T1_2"></td>
+            <td id="T1_3"></td>
+        </tr>
+    </table>
 
     <script>
         var obj={};
@@ -24,7 +36,9 @@
         };
 
         var show=function(){
-            document.querySelector("#result").innerText=obj.using+obj.price+obj.purpose;
+            document.querySelector("#T1_1").innerText=obj.using;
+            document.querySelector("#T1_2").innerText=obj.price;
+            document.querySelector("#T1_3").innerText=obj.purpose;
         };
     </script>
 
