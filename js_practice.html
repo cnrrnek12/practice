@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js_practice.html</title>
+</head>
+<body>
+    <h1>js함수연습하기.</h1>
+
+    <input type="text" id="num1" placeholder="숫자입력...">
+    <button onclick="x()">*</button>
+    <input type="text" id="num2" placeholder="숫자입력...">
+    <span>=</span>
+    <strong id="result">0</strong>
+
+    <script>
+        var x=function(){
+            var num1=parseFloat(document.querySelector("#num1").value);
+            var num2=parseFloat(document.querySelector("#num2").value);
+            document.querySelector("#result").innerText=num1*num2;
+        };
+    </script>
+
+</body>
+</html>
