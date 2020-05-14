@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js_practice2.html</title>
+</head>
+<body>
+    <h1>오늘 사용한 카드 이력</h1>
+    <input type="text" id="using" placeholder="사용한곳..">
+    <input type="text" id="price" placeholder="금액..">
+    <input type="text" id="purpose" placeholder="사용목적..">
+    <button onclick="save();">저장하기</button>
+    <button onclick="show();">보여주기</button>
+    <p id="result"></p>
+
+    <script>
+        var obj={};
+
+        var save=function(){
+            obj.using=document.querySelector("#using").value;
+            obj.price=document.querySelector("#price").value;
+            obj.purpose=document.querySelector("#purpose").value;
+        };
+
+        var show=function(){
+            document.querySelector("#result").innerText=obj.using+obj.price+obj.purpose;
+        };
+    </script>
+
+</body>
+</html>
