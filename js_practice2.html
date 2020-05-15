@@ -27,18 +27,17 @@
     </table>
 
     <script>
+        var test=[];
         var obj={};
 
         var save=function(){
-            obj.using=document.querySelector("#using").value;
-            obj.price=document.querySelector("#price").value;
-            obj.purpose=document.querySelector("#purpose").value;
+            obj.using=test.push(document.querySelector("#using").value);
+            obj.price=test.push(document.querySelector("#price").value);
+            obj.puposre=test.push(document.querySelector("#purpose").value); 
         };
 
         var show=function(){
-            document.querySelector("#T1_1").innerText=obj.using;
-            document.querySelector("#T1_2").innerText=obj.price;
-            document.querySelector("#T1_3").innerText=obj.purpose;
+            //i= +4
         };
     </script>
 
