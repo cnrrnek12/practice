@@ -13,43 +13,43 @@
     <h1>시험 결과 확인하기.</h1>
     
     <h2>1~3학년 점수 입력</h2>
-    <input type="text" id="test1" placeholder="점수입력...">
-    <button id="result1">결과확인하기</button>
+    <input type="text" class="test1" placeholder="점수입력...">
+    <button class="test1">결과확인하기</button>
     <p id="console1"></p>
 
     <h2>4학년 점수 입력</h2>
-    <input type="text" id="test2" placeholder="점수입력...">
-    <button id="result2">결과확인하기</button>
+    <input type="text" class="test2" placeholder="점수입력...">
+    <button class="test2">결과확인하기</button>
     <p id="console2"></p>
     
     <script>
-        document.querySelector("#result1")
-        .addEventListener("keydown",function(event){
-            console.log(event);
+        document.querySelector(".test1")
+        .addEventListener("keyup",function(event){
             //1. 1~3학년의 입력한 성적을 가지고오기.
-            var t1=document.querySelector("#test1").value;
+            var t1=document.querySelector(".test1").value;
             //2. 1~3학년의 입력한 성적을 가지고와서 조건에 맞게 p의 innerText에 나타내기.
             if(event.key == "Enter"){
             if(t1 >= 60){
                 document.querySelector("#console1").innerText="합격"
             }else{
                 document.querySelector("#console1").innerText="불합격"
-            };
-        }});
+            }};
+        });
 
         //Enter key로 확인버튼 누르기.
 
 
-        document.querySelector("#result2")
-        .addEventListener("click",function(){
+        document.querySelector(".test2")
+        .addEventListener("keyup",function(event){
             //1. 4학년의 입력한 성적을 가지고오기.
-            var t2=document.querySelector("#test2").value;
+            var t2=document.querySelector(".test2").value;
             //2. 4학년이 입력한 성적을 가지고와서 조건에 맞게 p의 innerText에 나타내기.
+            if(event.key == "Enter"){
             if(t2 >= 70){
                 document.querySelector("#console2").innerText="합격"
             }else{
                 document.querySelector("#console2").innerText="불합격"
-            }
+            }};
         });
 
 
