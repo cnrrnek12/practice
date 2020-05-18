@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js_if.html</title>
+</head>
+<body>
+    <!--문제. 
+    코리아 초등학교에서 1학년부터 4학년까지 중간고사 시험을 보았다. 
+    4학년은 70점 이상이면 합격, 그 이외의 학년은 60점 이상이면 합격이다. 
+    이를 판단하는 프로그램을 작성해보자. !-->
+    <h1>시험 결과 확인하기.</h1>
+    
+    <h2>1~3학년 점수 입력</h2>
+    <input type="text" id="test1" placeholder="점수입력...">
+    <button id="result1">결과확인하기</button>
+    <p id="console1"></p>
+
+    <h2>4학년 점수 입력</h2>
+    <input type="text" id="test2" placeholder="점수입력...">
+    <button id="result2">결과확인하기</button>
+    <p id="console2"></p>
+    
+    <script>
+        document.querySelector("#result1")
+        .addEventListener("keydown",function(event){
+            console.log(event);
+            //1. 1~3학년의 입력한 성적을 가지고오기.
+            var t1=document.querySelector("#test1").value;
+            //2. 1~3학년의 입력한 성적을 가지고와서 조건에 맞게 p의 innerText에 나타내기.
+            if(event.key == "Enter"){
+            if(t1 >= 60){
+                document.querySelector("#console1").innerText="합격"
+            }else{
+                document.querySelector("#console1").innerText="불합격"
+            };
+        }});
+
+        //Enter key로 확인버튼 누르기.
+
+
+        document.querySelector("#result2")
+        .addEventListener("click",function(){
+            //1. 4학년의 입력한 성적을 가지고오기.
+            var t2=document.querySelector("#test2").value;
+            //2. 4학년이 입력한 성적을 가지고와서 조건에 맞게 p의 innerText에 나타내기.
+            if(t2 >= 70){
+                document.querySelector("#console2").innerText="합격"
+            }else{
+                document.querySelector("#console2").innerText="불합격"
+            }
+        });
+
+
+    </script>
+</body>
+</html>
