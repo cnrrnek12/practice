@@ -3,48 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>js_pt4.html</title>
+    <title>js_For.html</title>
 </head>
 <body>
-    <h1>loop 연습</h1>
+    <h1>For 문 연습하기</h1>
 
-    <div>div1</div>
-    <div>div2</div>
-    <div>div3</div>
-    <div>div4</div>
-    <div>div5</div>
-    <button id="test">입력</button>
+    <h2>1</h2>
+    <h2>2</h2>
+    <h2>3</h2>
+    <h2>4</h2>
+    <h2>5</h2>
+    <h2>6</h2>
+    <h2>7</h2>
+    <h2>8</h2>
+    <h2>9</h2>
+    <h2>10</h2>
+
     <script>
-        var mems=["aaa","sss","ccc","ddd","ggg"]
+        var h2s=document.querySelectorAll("h2");
 
-        //버튼을 누르면 멤버목록을 div innerText에 배열대로 입력하기.
-        //document.querySelector("#test")
-        //.addEventListener("click",function(){
-        //    for(i=0; i<mems.length; i++){
-        //        document.querySelectorAll("div")[i].innerText=mems[i];
-        //    };
-        //});
-    
-        //버튼을 누르면 멤버목록을 div에 innerText에 배열대로 입력하기(forEach)를 사용할것.
-        //document.querySelector("#test")
-        //.addEventListener("click",function(){
-        //    mems.forEach(function(item,index){
-        //        document.querySelectorAll("div")[index].innerText=item;
-        //    });
-        //});
-
-        //버튼을 누르면 멤버목록을 div에 innerText에 배열대로 입력하기 (while)을 사용할것.
-        var count=0;
-            document.querySelector("#test")
-            .addEventListener("click",function(){
-                while(true){
-                    document.querySelectorAll("div")[count].innerText=mems[count];
-                    count ++;
-                    if(count == mems.length){
-                        break;
-                    };
-                }
+        for(var i=0; i<h2s.length; i++){
+            h2s[i].addEventListener("mouseover",function(){
+                this.style.backgroundColor="yellow";
+                this.style.color="red";
             });
+        };
+
     </script>
+
 </body>
 </html>
