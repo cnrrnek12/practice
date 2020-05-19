@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js_pt8.html</title>
+</head>
+<body>
+    <h1>반복문 연습.</h1>
+    <input type="text" id="inputName" placeholder="이름을 입력하시오...">
+    <button id="Btn">조회</button>
+    <h2 id="console"></h2>
+    <script>
+        var mems=[];
+
+        mems.push({name:"aaa",phone:"010",email:"aaa@"});
+        mems.push({name:"bbb",phone:"010",email:"bbb@"});
+        mems.push({name:"ccc",phone:"010",email:"ccc@"});
+        mems.push({name:"ddd",phone:"010",email:"ddd@"});
+        mems.push({name:"fff",phone:"010",email:"fff@"});
+
+        //버튼을 클릭했을때 인풋요소의 벨류와 mems의 배열에 정보가 맞다면
+        //h2요소에 나타내기.
+
+        document.querySelector("#Btn")
+        .addEventListener("click",function(){
+            var inputName=document.querySelector("#inputName").value
+            var isExist=false;
+            for(var i=0; i<mems.length; i++){
+                var tmp=mems[i]
+                if(inputName == tmp.name){
+                    document.querySelector("#console").innerText=
+                    tmp.name+tmp.phone+tmp.email;
+                    isExist=true;
+                };
+            };
+            if(isExist == false){
+                document.querySelector("#console").innerText=
+                inputName+" 의 정보는 없습니다."
+            };
+        });
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        //버튼을 눌렀을때 동작하는 함수만들기
+        //document.querySelector("#Btn")
+        //.addEventListener("click",function(){
+        //    //비교할 값을 가지고오기
+        //    var inputName=document.querySelector("#inputName").value
+        //    //배열을 돌면서 이름이 동일한 정보를 찾기위해 반복문을 만듬.
+        //    for(var i=0; i<mems.length; i++){
+        //        var tmp=mems[i]; //mems의 배열의 반복들이 tmp라는 변수에 담아둠.
+        //        //반복문이 돌면서 이름과 정보가 같다면 h2요소에 표출
+        //        if(inputName == tmp.name){
+        //            document.querySelector("#console").innerText=
+        //            tmp.name +"/"+tmp.phone+"/"+tmp.email;
+        //            break;
+        //        }else{
+        //            document.querySelector("#console").innerText=
+        //            inputName+" 의 정보는 존재하지 않습니다."
+        //        };
+        //    };
+        //});
+    </script>
+</body>
+</html>
