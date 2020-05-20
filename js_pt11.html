@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js_pt11.html</title>
+</head>
+<body>
+    <h1>createElement 연습하기</h1>
+    <button id="Btn">확인하기</button>
+    <ul id="buyList">
+
+    </ul>
+    <script>
+       const buyObj=["쌀","라면","물","과자","빵"];
+
+        //document.querySelector("#Btn")
+        //.addEventListener("click",function(){
+        //    for(let i=0; i<buyObj.length; i++){
+        //    let lis=document.createElement("li");
+        //    lis.innerText=buyObj[i];
+        //    document.querySelector("#buyList").append(lis);
+        //    };    
+        //});
+
+        //foreach 쓰기.
+        document.querySelector("#Btn")
+        .addEventListener("click",function(){
+            buyObj.forEach(function(obj){
+            let lis=document.createElement("li");
+            lis.innerText=obj;
+            document.querySelector("#buyList").append(lis);
+            });
+        });
+        
+    </script>
+</body>
+</html>
