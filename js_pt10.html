@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js_pt10.html</title>
+</head>
+<body>
+    <h1>if 연습</h1>
+    
+    <input type="text" id="inputMsg" placeholder="점수입력"/>
+    <button id="Btn">조회하기</button>
+    <p id="console"></p>
+    <script>
+    /*
+    점수가
+    90 이상이면 "A"
+    80 이상이면 "B"
+    70 이상이면 "C"
+    60 이상이면 "D"
+    60 미만이면 "F"
+    라는 문자열을 p요소에 출력해 보세요.
+    단. 100이상 0이하 점수는 오류라고 표시해보세요. */
+    
+    document.querySelector("#Btn")
+    addEventListener("click",function(){
+        let inputMsg=document.querySelector("#inputMsg").value;
+        let a=document.querySelector("#console")
+        if(inputMsg==""){
+            a.innerText="";
+        }else if(inputMsg>100){
+            a.innerText="입력한 점수가 올바르지 않습니다.";
+        }else if(inputMsg>=90){
+            a.innerText="A";
+        }else if(inputMsg>=80){
+            a.innerText="B";
+        }else if(inputMsg>=70){
+            a.innerText="C";
+        }else if(inputMsg>=60){
+            a.innerText="D";
+        }else if(inputMsg<60 && inputMsg>0){
+            a.innerText="F";
+        }else{
+            a.innerText="입력한 점수가 올바르지 않습니다.";
+        };
+    });
+    </script>    
+</body>
+</html>
