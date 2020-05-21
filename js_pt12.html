@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js_pt12.html</title>
+</head>
+<body>
+    <h1>for문 연습</h1>
+    
+    <script>
+        var cost = [ 85, 42, 37, 10, 22, 8, 15 ];
+        var total_cost = 0;
+
+        //cost배열안에 있는 수의 합을 구해 total_cost안에 합계를 넣으시오.
+        var sum=0
+        for(let i=0; i<cost.length; i++){
+            sum=sum+cost[i];
+            console.log(sum);
+        };
+
+        let p1=document.createElement("p")
+        p1.innerText=sum
+        
+    </script>
+
+
+</body>
+</html>
