@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js_pt15.html</title>
+    <style>
+        #warpper img{
+            width: 100px;
+        }
+    </style>
+</head>
+<body>
+    <h1>로또 번호 출력하기(이미지사용해서)</h1>
+    <button id="lottoBtn">번호출력</button>
+    <div id="wrapper">
+
+    </div>
+    <script>
+    var nums=[];
+    //+번호의 이미지가 들어가도록 바꾼다.
+    document.querySelector("#lottoBtn")
+    .addEventListener("click",function(){
+        while(true){  
+            var lottonums=parseInt(Math.random()*45)+1;
+            if(nums.indexOf(lottonums) == -1){
+                nums.push(lottonums);
+            }
+            if(nums.length == 6){
+                break;
+            }
+        };
+        for(let i=0; i<nums.length; i++){        
+            let ball=document.createElement("img");
+            ball.setAttribute("src","images/lotto-ball-"nums[i]+".png")
+            document.querySelector("#wrapper").append(ball);
+        };
+
+        
+        document.querySelector("#wrapper").innerText=ball;
+    });
+    </script>
+</body>
+</html>
