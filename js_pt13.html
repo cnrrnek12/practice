@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js_pt13.html</title>
+    <style>
+        .work:hover{
+            background-color: tomato;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>할일저장하기</h1>
+    <input type="text" id="numMsg" placeholder="번호입력..."/>
+    <input type="text" id="todoMsg" placeholder="할일입력..."/>
+    <input type="text" id="placeMsg" placeholder="장소입력..."/>
+    <button id="insertBtn">저장</button>
+
+    <table border="1" cellspacing="0">
+        <thead>
+            <tr>
+                <th>번호</th>
+                <th>할일</th>
+                <th>장소</th>
+            </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>
+
+    <script>
+        document.querySelector("#insertBtn")
+        .addEventListener("click",function(){
+            let num=document.querySelector("#numMsg").value;
+            let todo=document.querySelector("#todoMsg").value;
+            let place=document.querySelector("#placeMsg").value;
+
+            let newTr=document.createElement("tr");
+            document.querySelector("tbody").append(newTr);
+            newTr.setAttribute("class","work");
+
+            let newTd=document.createElement("td");
+            let newTd2=document.createElement("td");
+            let newTd3=document.createElement("td");
+
+            newTd.innerText=num;
+            newTd2.innerText=todo;
+            newTd3.innerText=place;
+
+            newTr.append(newTd);
+            newTr.append(newTd2);
+            newTr.append(newTd3);
+
+            newTr.addEventListener("click",function(){
+                let isDelete=confirm("삭제하시겠습니까?")
+                if(isDelete){
+                    this.remove();
+                };
+            });
+        });
+        
+        
+    </script>
+
+</body>
+</html>
